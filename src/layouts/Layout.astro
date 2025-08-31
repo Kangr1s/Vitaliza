@@ -1,58 +1,76 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Breadcrumb from "../components/BreadCrumb.astro";
+import { routes } from "../data/breadcrumbs";
+
 interface Props {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
+
 const { title, description } = Astro.props;
+const path = Astro.url.pathname;
+const current = routes[path];
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon_logo.svg" />
-		<!-- `sizes="any"` is to fix Chrome bug -->
-		<link rel="icon" href="/favicon.ico" sizes="any" />
-		<link rel="icon" href="/icon.svg" type="image/svg+xml" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<link rel="manifest" href="/manifest.webmanifest" />
-		        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet"> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script
+      src="https://kit.fontawesome.com/58deb355db.js"
+      crossorigin="anonymous"></script>
+    <link rel="icon" type="image/svg+xml" href="/favicon_logo.svg" />
+    <!-- `sizes="any"` is to fix Chrome bug -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
-        <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
 
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<Header />
-		<slot />
-		<Footer />
-	</body>
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    {path !== "/" && current && <Breadcrumb route={current} />}
+    <slot />
+    <Footer />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>

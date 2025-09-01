@@ -47,14 +47,14 @@ const current = routes[path];
     />
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -63,14 +63,13 @@ const current = routes[path];
     {path !== "/" && current && <Breadcrumb route={current} />}
     <slot />
     <Footer />
+    <!-- Librerías JS (en orden, jQuery primero) -->
+    <script src="/js/jquery-3.7.0.min.js" is:inline></script>
+    <script src="/js/bootstrap.min.js" is:inline></script>
+    <script src="/lib/wow/wow.min.js" is:inline></script>
+    <script src="/lib/easing/easing.min.js" is:inline></script>
+    <script src="/lib/waypoints/waypoints.min.js" is:inline></script>
+    <script src="/lib/owlcarousel/owl.carousel.min.js" is:inline></script>
+    <script src="/js/main.js" is:inline></script>
   </body>
 </html>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>

@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Service from '../components/Services.astro';
+import { servicios } from '../data/services.js';
+import Testimonies from '../components/testimonies.astro';
+---
+
+<Layout
+  title="Vitaliza - Explora nuestros servicios"
+  description="En Vitaliza, nos dedicamos a ofrecer soluciones integrales para tu bienestar y recuperación. Nuestro equipo de expertos está comprometido en brindarte el apoyo necesario para alcanzar tus objetivos de salud.">
+  <main>
+      <Service services={servicios} />
+      <Testimonies />
+  </main>
+</Layout>

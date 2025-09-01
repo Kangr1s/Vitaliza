@@ -1,11 +1,31 @@
 ---
+import Blog from '../components/Blog.astro';
+import Carrusel from '../components/Carrusel.astro';
+import Services from '../components/Services.astro';
+import { servicios } from '../data/services.js';
 import Layout from '../layouts/Layout.astro';
+import About from '../components/About.astro';
+// filepath: src/pages/index.astro
+import { equipo } from '../data/team.js';
+import TeamList from '../components/TeamList.astro';
+import Features from '../components/Features.astro';
 ---
-
 <Layout
   title="Vitaliza - Comprometidos con tu recuperación"
   description="En Vitaliza, nos dedicamos a ofrecer soluciones integrales para tu bienestar y recuperación. Nuestro equipo de expertos está comprometido en brindarte el apoyo necesario para alcanzar tus objetivos de salud.">
   <main>
-
+	<Carrusel />
+		<Services services={servicios.slice(0, 3)} />
+		<div class="text-center my-4">
+		<button class="btn btn-primary btn-lg text-white" onclick="window.location='/services'">Mostrar más servicios</button>
+		</div>
+	<About />
+	<TeamList equipo={equipo.slice(0, 3)} />
+		<div class="text-center my-4">
+		<button class="btn btn-primary btn-lg text-white" onclick="window.location='/about'">Conócenos</button>
+		</div>
+	<Features />
+	<Blog />
   </main>
 </Layout>
+

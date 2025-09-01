@@ -1,3 +1,19 @@
+/*Formateo de página*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* General */
+html, body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: NeoSansIntel, sans-serif, arial;;
+    color: #333;
+}
+
 
 /*** Spinner Start ***/
 /*** Spinner ***/
@@ -17,8 +33,8 @@
 
 .back-to-top {
     position: fixed;
-    right: 30px;
-    bottom: 30px;
+    right: 20px;
+    bottom: 20px;
     display: flex;
     width: 45px;
     height: 45px;
@@ -454,6 +470,7 @@
 /*** Service Start ***/
 .service .service-item {
     box-shadow: 0 0 45px rgba(0, 0, 0, .2) ;
+    height: 100%;
 }
 
 .service .service-item .service-img {
@@ -491,6 +508,7 @@
 
 .service .service-item .service-content {
     position: relative;
+    flex-grow: 1; /* hace que todas crezcan igual */
     z-index: 2;
 
 }
@@ -527,6 +545,25 @@
 .service .service-item:hover .service-content .service-content-inner h5 {
     color: var(--bs-secondary);
 }
+
+/* --- Uniformar altura de tarjetas de servicio --- */
+.service .service-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.service .service-content {
+    flex-grow: 1; /* hace que todas crezcan igual */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.service .service-content-inner p {
+    min-height: 80px; /* asegura espacio para descripciones cortas */
+}
+
 
 /*** Service End ***/
 
@@ -794,6 +831,7 @@
     color: var(--bs-white);
 }
 /*** Team End ***/
+
 
 
 /*** testimonial Start ***/
@@ -1173,6 +1211,33 @@
 }
 
 /*** Footer End ***/
+
+/*Buttom to whatsapp chanel*/
+.btn-wsp{
+    display: flex;
+    position:fixed;
+    width:60px;
+    height:60px;
+    line-height: 63px;
+    bottom:20px;
+    left:20px;
+    background:#25d366;
+    color:#FFF;
+    border-radius:50px;
+
+    align-items: center;
+    justify-content: center;;
+    font-size:35px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    z-index:100;
+    transition: all 300ms ease;
+}
+.btn-wsp:hover{
+    background: #20ba5a;
+    transform: scale(1.05);
+    color: #FFF;
+}
+
 
 /*** copyright Start ***/
 .copyright {

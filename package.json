@@ -19,5 +19,8 @@
     "owl.carousel": "^2.3.4",
     "truffle-hdwallet-provider": "^1.0.17",
     "wowjs": "^1.1.3"
+  },
+  "devDependencies": {
+    "rollup": "^4.50.0"
   }
 }

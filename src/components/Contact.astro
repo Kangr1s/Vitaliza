@@ -1,0 +1,175 @@
+<!-- Contact Start -->
+<div class="container-fluid contact py-5">
+  <div class="container py-5">
+    <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="sub-style mb-4">
+        <h3 class="sub-title text-white px-3 mb-0">Contáctanos</h3>
+      </div>
+      <p class="mb-0 text-white">
+        Ponte en contacto con nosotros para recibir atención personalizada y
+        resolver tus dudas. Nuestro equipo está listo para ayudarte en tu
+        proceso de recuperación y bienestar.
+      </p>
+    </div>
+    <div class="row g-5 align-items-center">
+      <!-- Formulario de contacto -->
+      <div
+        class="col-lg-5 col-xl-5 contact-form wow fadeInLeft"
+        data-wow-delay="0.1s"
+      >
+        <h2 class="display-5 text-white mb-2">Envíanos un mensaje</h2>
+        <p class="mb-4 text-white">
+          ¡Estamos para ayudarte! Si tienes dudas, comentarios o necesitas
+          orientación, no dudes en escribirnos. Nuestro equipo está listo para
+          brindarte el apoyo que necesitas en tu proceso de bienestar.
+        </p>
+        <form id="contactForm" novalidate="novalidate">
+          <div class="row">
+            <div class="col-sm-6 control-group">
+              <input
+                type="text"
+                class="form-control py-2"
+                id="name"
+                placeholder="Tu nombre"
+                required="required"
+                data-validation-required-message="Por favor ingresa tu nombre"
+              />
+              <p class="help-block text-danger"></p>
+            </div>
+            <div class="col-sm-6 control-group">
+              <input
+                type="email"
+                class="form-control py-2"
+                id="email"
+                placeholder="Tu correo electrónico"
+                required="required"
+                data-validation-required-message="Por favor ingresa tu correo electrónico"
+              />
+              <p class="help-block text-danger"></p>
+            </div>
+            <div class="col-sm-6 control-group">
+              <input
+                type="text"
+                class="form-control py-2"
+                id="mobile"
+                placeholder="Teléfono"
+                required="required"
+                data-validation-required-message="Por favor ingresa tu número de teléfono"
+                pattern="^(?![-. ])[\d().+\- ]{6,14}\d$"
+                data-validation-pattern-message="No es un número de teléfono válido"
+              />
+              <p class="help-block text-danger"></p>
+            </div>
+            <div class="col-sm-6 control-group">
+              <input
+                type="text"
+                class="form-control py-2"
+                id="subject"
+                placeholder="Asunto"
+                required="required"
+                data-validation-required-message="Por favor ingresa un asunto"
+              />
+              <p class="help-block text-danger"></p>
+            </div>
+            <div class="col-12 control-group">
+              <textarea
+                class="form-control"
+                rows="4"
+                id="message"
+                placeholder="Mensaje"
+                required="required"
+                data-validation-required-message="Por favor ingresa tu mensaje"
+              ></textarea>
+              <p class="help-block text-danger"></p>
+            </div>
+            <div class="col-12">
+              <button
+                class="btn btn-light text-primary w-100 py-3"
+                type="submit"
+                id="sendMessageButton"
+              >
+                <span>Enviar mensaje</span>
+                <div
+                  class="d-none spinner-border spinner-border-sm text-light ms-3"
+                  role="status"
+                >
+                </div>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- Mapa -->
+      <div class="col-lg-7 col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
+        <div class="d-flex justify-content-center mb-4">
+          <a class="btn btn-lg-square btn-light rounded-circle mx-2" href=""
+            ><i class="fab fa-facebook-f"></i></a
+          >
+          <a class="btn btn-lg-square btn-light rounded-circle mx-2" href=""
+            ><i class="fa-brands fa-x-twitter"></i></a
+          >
+          <a class="btn btn-lg-square btn-light rounded-circle mx-2" href=""
+            ><i class="fab fa-instagram"></i></a
+          >
+          <a class="btn btn-lg-square btn-light rounded-circle mx-2" href=""
+            ><i class="fab fa-linkedin-in"></i></a
+          >
+        </div>
+        <div class="rounded h-100">
+          <iframe
+            class="rounded w-100"
+            style="height: 500px;"
+            src='https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d498.2724979937621!2d-76.63293268103611!3d2.4470649914106173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1756662645541!5m2!1ses!2sco"'
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nueva fila horizontal para datos de contacto -->
+    <div class="row mt-4 pt-4">
+      <div class="d-flex flex-row justify-content-center w-100">
+        <!-- Dirección -->
+        <div class="mx-3 d-flex flex-column align-items-center text-center">
+          <div
+            class="bg-white d-flex align-items-center justify-content-center mb-2"
+            style="width: 90px; height: 90px; border-radius: 50px;"
+          >
+            <i class="fa fa-map-marker-alt fa-2x text-primary"></i>
+          </div>
+          <h4 class="text-dark">Dirección</h4>
+          <p class="mb-0 text-white">
+            Cra. 35 #18-21, Barrio Munich
+            <br />
+            Popayán, Colombia
+          </p>
+        </div>
+        <!-- Teléfonos -->
+        <div class="mx-3 d-flex flex-column align-items-center text-center">
+          <div
+            class="bg-white d-flex align-items-center justify-content-center mb-2"
+            style="width: 90px; height: 90px; border-radius: 50px;"
+          >
+            <i class="fa fa-phone-alt fa-2x text-primary"></i>
+          </div>
+          <h4 class="text-dark">Teléfonos</h4>
+          <p class="mb-0 text-white">+57 3254868978</p>
+          <p class="mb-0 text-white">+57 3244868979</p>
+        </div>
+        <!-- Correo electrónico -->
+        <div class="mx-3 d-flex flex-column align-items-center text-center">
+          <div
+            class="bg-white d-flex align-items-center justify-content-center mb-2"
+            style="width: 90px; height: 90px; border-radius: 50px;"
+          >
+            <i class="fa fa-envelope-open fa-2x text-primary"></i>
+          </div>
+          <h4 class="text-dark">Correo electrónico</h4>
+          <p class="mb-0 text-white"><a class="text-white" href="mailto:contacto@vitaliza.com">contacto@vitaliza.com</a></p>
+          <p class="mb-0 text-white"><a class="text-white" href="mailto:info@vitaliza.com">info@vitaliza.com</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contact End -->

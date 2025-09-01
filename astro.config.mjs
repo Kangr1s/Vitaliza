@@ -1,13 +1,11 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import node from '@astrojs/node';
+import { defineConfig } from "astro/config";
+import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
-export default defineConfig({  
-    site: "https://Kangr1s.github.io",
-    base: "/Vitaliza",
-    output: 'static',
-    adapter: node({
-        mode: 'standalone', // o 'server', según lo necesites
-    }),
+export default defineConfig({
+  output: "server",
+  adapter: netlify({
+    edgeMiddleware: true,
+  }),
 });

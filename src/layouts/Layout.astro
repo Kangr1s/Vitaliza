@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Breadcrumb from "../components/BreadCrumb.astro";
 import { routes } from "../data/breadcrumbs";
+import { blogPosts } from "../data/blogPosts";
 
 interface Props {
   title?: string;
@@ -11,7 +12,24 @@ interface Props {
 
 const { title, description } = Astro.props;
 const path = Astro.url.pathname;
-const current = routes[path];
+let current = routes[path];
+
+// Si no encuentra coincidencia exacta, verificamos si es un post del blog
+if (!current && path.startsWith("/blog/")) {
+  const slug = path.split("/").pop();
+  const post = blogPosts.find((p) => p.slug === slug);
+
+  if (post) {
+    current = {
+      title: post.title,
+      items: [
+        { name: "Inicio", url: "/" },
+        { name: "Blog", url: "/blog" },
+        { name: post.title },
+      ],
+    };
+  }
+}
 ---
 
 <!doctype html>
@@ -22,12 +40,7 @@ const current = routes[path];
     <script
       src="https://kit.fontawesome.com/58deb355db.js"
       crossorigin="anonymous"></script>
-    <link rel="icon" type="image/svg+xml" href="/favicon_logo.svg" />
-    <!-- `sizes="any"` is to fix Chrome bug -->
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="img/v.png" />
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -48,7 +61,10 @@ const current = routes[path];
 
     <!-- Libraries Stylesheet -->
     <link href="/lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link
+      href="/lib/owlcarousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="/css/bootstrap.min.css" rel="stylesheet" />

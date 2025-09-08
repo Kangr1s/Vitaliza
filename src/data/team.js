@@ -3,8 +3,6 @@ export const equipo = [
     img: "/img/team-1.jpg",
     nombre: "Steffany Rios",
     profesion: "Fisioterapeuta especializado en masajes terapéuticos",
-    facebook: "http://facebook.com/",
-    twitter: "http://twitter.com/",
     instagram: "http://instagram.com/",
     linkedin: "http://linkedin.com/in/"
   },
@@ -13,8 +11,7 @@ export const equipo = [
     nombre: "Alejandro Artunduaga",
     profesion: "Especialista en rehabilitación y terapia física",
     facebook: "http://facebook.com/",
-    instagram: "http://instagram.com/",
-    linkedin: "http://linkedin.com/in/"
+    instagram: "http://instagram.com/"
   },
   {
     img: "/img/team-3.jpg",

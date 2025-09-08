@@ -2,7 +2,9 @@
 <div class="container-fluid appointment py-5">
   <div class="container py-5">
     <div class="row g-5 align-items-center">
-      <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2">
+      
+      <!-- Columna izquierda con texto + video -->
+      <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
         <div class="section-title text-start">
           <h4 class="sub-title pe-3 mb-0">Soluciones para tu bienestar</h4>
           <h1 class="display-4 mb-4">
@@ -15,86 +17,63 @@
             comprometido en brindarte atención profesional y humana, para que
             vuelvas a sentirte bien y disfrutes cada momento.
           </p>
-          <div class="row g-4">
-            <div class="col-sm-6">
-              <div class="d-flex flex-column h-100">
-                <div class="mb-4">
-                  <h5 class="mb-3">
-                    <i class="fa fa-check text-primary me-2"></i> Relajación Corporal
-                  </h5>
-                  <p class="mb-0">
-                    Disfruta de sesiones diseñadas para relajar tus músculos,
-                    reducir el estrés y mejorar tu bienestar físico y emocional.
-                  </p>
-                </div>
-                <div class="mb-4">
-                  <h5 class="mb-3">
-                    <i class="fa fa-check text-primary me-2"></i> Rehabilitación
-                    Personalizada
-                  </h5>
-                  <p class="mb-0">
-                    Tratamientos adaptados a tus necesidades, enfocados en una
-                    recuperación efectiva y segura, para que vuelvas a tu rutina
-                    sin molestias.
-                  </p>
-                </div>
-                <!-- Botón eliminado -->
+
+          <!-- Características -->
+          <div class="row">
+            <div class="d-flex flex-row h-100 w-100">
+              <div class="mb-4 pe-3">
+                <h5 class="mb-3">
+                  <i class="fa fa-check text-primary me-2"></i> Relajación Corporal
+                </h5>
+                <p class="mb-0">
+                  Disfruta de sesiones diseñadas para relajar tus músculos,
+                  reducir el estrés y mejorar tu bienestar físico y emocional.
+                </p>
               </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="video h-100">
-                <img
-                  src="/img/video-img.jpg"
-                  class="img-fluid rounded w-100 h-100"
-                  style="object-fit: cover;"
-                  alt="Video Vitaliza"
-                />
-                <button
-                  type="button"
-                  class="btn btn-play"
-                  data-bs-toggle="modal"
-                  data-src="https://www.youtube.com/embed/DWRcNpR6Kdc"
-                  data-bs-target="#videoModal"
-                >
-                  <span></span>
-                </button>
+              <div class="mb-4 ps-3">
+                <h5 class="mb-3">
+                  <i class="fa fa-check text-primary me-2"></i> Rehabilitación Personalizada
+                </h5>
+                <p class="mb-0">
+                  Tratamientos adaptados a tus necesidades, enfocados en una
+                  recuperación efectiva y segura, para que vuelvas a tu rutina sin molestias.
+                </p>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Video -->
+        <div class="video mt-4">
+          <iframe
+            class="rounded w-100"
+            height="315"
+            src="https://www.youtube.com/embed/EV5_cpvto4s?si=c8pb3NIDx3579OKI" 
+            title="Video Vitaliza"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
       </div>
-      <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
+
+      <!-- Columna derecha con formulario -->
+      <div class="col-lg-6  wow fadeInRight" data-wow-delay="0.4s">
         <div class="appointment-form rounded p-5">
           <p class="fs-4 text-uppercase text-primary">Contáctanos</p>
           <h1 class="display-5 mb-4">Agenda tu cita</h1>
           <form>
             <div class="row gy-3 gx-4">
               <div class="col-xl-6">
-                <input
-                  type="text"
-                  class="form-control py-3 border-primary bg-transparent text-black"
-                  placeholder="Nombre"
-                />
+                <input type="text" class="form-control py-3 border-primary bg-transparent text-black" placeholder="Nombre"/>
               </div>
               <div class="col-xl-6">
-                <input
-                  type="email"
-                  class="form-control py-3 border-primary bg-transparent text-black"
-                  placeholder="Correo electrónico"
-                />
+                <input type="email" class="form-control py-3 border-primary bg-transparent text-black" placeholder="Correo electrónico"/>
               </div>
               <div class="col-xl-6">
-                <input
-                  type="text"
-                  class="form-control py-3 border-primary bg-transparent"
-                  placeholder="Teléfono"
-                />
+                <input type="text" class="form-control py-3 border-primary bg-transparent" placeholder="Teléfono"/>
               </div>
               <div class="col-xl-6">
-                <select
-                  class="form-select py-3 border-primary bg-transparent"
-                  aria-label="Selecciona tu género"
-                >
+                <select class="form-select py-3 border-primary bg-transparent">
                   <option selected disabled>Selecciona tu género</option>
                   <option value="1">Masculino</option>
                   <option value="2">Femenino</option>
@@ -102,16 +81,10 @@
                 </select>
               </div>
               <div class="col-xl-6">
-                <input
-                  type="date"
-                  class="form-control py-3 border-primary bg-transparent"
-                />
+                <input type="date" class="form-control py-3 border-primary bg-transparent"/>
               </div>
               <div class="col-xl-6">
-                <select
-                  class="form-select py-3 border-primary bg-transparent"
-                  aria-label="Selecciona el área"
-                >
+                <select class="form-select py-3 border-primary bg-transparent">
                   <option selected disabled>Área de atención</option>
                   <option value="1">Fisioterapia</option>
                   <option value="2">Salud física</option>
@@ -119,61 +92,18 @@
                 </select>
               </div>
               <div class="col-12">
-                <textarea
-                  class="form-control border-primary bg-transparent text-black"
-                  name="text"
-                  id="area-text"
-                  cols="30"
-                  rows="5"
-                  placeholder="¿En qué podemos ayudarte? Cuéntanos tu caso o tus síntomas."
-                ></textarea>
+                <textarea class="form-control border-primary bg-transparent text-black" rows="5" placeholder="¿En qué podemos ayudarte? Cuéntanos tu caso o tus síntomas."></textarea>
               </div>
               <div class="col-12">
-                <button
-                  type="button"
-                  class="btn btn-primary text-white w-100 py-3 px-5"
-                >
+                <button type="button" class="btn btn-primary text-white w-100 py-3 px-5">
                   ¡Quiero agendar mi cita!
                 </button>
               </div>
             </div>
           </form>
           <p class="mt-4 text-black text-center">
-            Da el primer paso hacia tu bienestar. Agenda tu cita y déjanos
-            acompañarte en tu recuperación. ¡Tu salud es nuestra prioridad!
+            Da el primer paso hacia tu bienestar. Agenda tu cita y déjanos acompañarte en tu recuperación. ¡Tu salud es nuestra prioridad!
           </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Modal Video -->
-<div
-  class="modal fade"
-  id="videoModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content rounded-0">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Video informativo</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body">
-        <!-- 16:9 aspect ratio -->
-        <div class="ratio ratio-16x9">
-          <iframe
-            class="embed-responsive-item"
-            src=""
-            id="video"
-            allowfullscreen
-            allow="autoplay"></iframe>
         </div>
       </div>
     </div>

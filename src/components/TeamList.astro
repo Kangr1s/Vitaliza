@@ -1,5 +1,4 @@
 ---
-// ...existing code...
 interface Persona {
   img: string;
   nombre: string;
@@ -12,7 +11,6 @@ interface Persona {
 
 // Annotate equipo with the correct type
 const { equipo = [] } = Astro.props as { equipo?: Persona[] };
-// ...existing code...
 ---
 
 <div class="container-fluid team py-5">
@@ -25,65 +23,82 @@ const { equipo = [] } = Astro.props as { equipo?: Persona[] };
         Servicios de fisioterapia de terapeutas profesionales
       </h1>
       <p class="mb-0">
-        Contamos con un equipo altamente capacitado en diferentes áreas de la fisioterapia. 
-        Nuestro compromiso es brindarte un acompañamiento profesional y humano para que 
-        recuperes tu movilidad, alivies el dolor y mejores tu calidad de vida. 
-        Cada tratamiento está diseñado de manera personalizada para adaptarse a tus necesidades.
+        Contamos con un equipo altamente capacitado en diferentes áreas de la
+        fisioterapia. Nuestro compromiso es brindarte un acompañamiento
+        profesional y humano para que recuperes tu movilidad, alivies el dolor y
+        mejores tu calidad de vida. Cada tratamiento está diseñado de manera
+        personalizada para adaptarse a tus necesidades.
       </p>
     </div>
     <div class="row g-4 justify-content-center">
-        {
+      {
         equipo.map((persona) => (
-            <div
+          <div
             class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
             data-wow-delay="0.1s"
-            >
-            <div class="team-item rounded">
-                <div class="team-img rounded-top h-100">
+          >
+            <div class="team-item rounded h-100 d-flex flex-column">
+              <div class="team-img rounded-top">
                 <img
-                    src={persona.img}
-                    class="img-fluid rounded-top w-100"
-                    alt={`Foto de ${persona.nombre}`}
+                  src={persona.img}
+                  class="img-fluid rounded-top w-100"
+                  alt={`Foto de ${persona.nombre}`}
                 />
-                <div class="team-icon d-flex justify-content-center">
-                    <a
-                    class="btn btn-square btn-primary text-white rounded-circle mx-1"
-                    href={persona.facebook}
-                    title="Facebook"
-                    >
-                    <i class="fab fa-facebook-f" />
-                    </a>
-                    <a
-                    class="btn btn-square btn-primary text-white rounded-circle mx-1"
-                    href={persona.twitter}
-                    title="Twitter"
-                    >
-                    <i class="fab fa-twitter" />
-                    </a>
-                    <a
-                    class="btn btn-square btn-primary text-white rounded-circle mx-1"
-                    href={persona.instagram}
-                    title="Instagram"
-                    >
-                    <i class="fab fa-instagram" />
-                    </a>
-                    <a
-                    class="btn btn-square btn-primary text-white rounded-circle mx-1"
-                    href={persona.linkedin}
-                    title="LinkedIn"
-                    >
-                    <i class="fab fa-linkedin-in" />
-                    </a>
-                </div>
-                </div>
-                <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
+              </div>
+              <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4 flex-grow-1">
                 <h5>{persona.nombre}</h5>
-                <p class="mb-0">{persona.profesion}</p>
+                <p class="mb-3">{persona.profesion}</p>
+                <div class="team-icon d-flex justify-content-center">
+                  {persona.facebook && (
+                    <a
+                      class="btn btn-square btn-primary text-white rounded-circle mx-1"
+                      href={persona.facebook}
+                      title="Facebook"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i class="fab fa-facebook-f" />
+                    </a>
+                  )}
+                  {persona.twitter && (
+                    <a
+                      class="btn btn-square btn-primary text-white rounded-circle mx-1"
+                      href={persona.twitter}
+                      title="Twitter"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i class="fab fa-twitter" />
+                    </a>
+                  )}
+                  {persona.instagram && (
+                    <a
+                      class="btn btn-square btn-primary text-white rounded-circle mx-1"
+                      href={persona.instagram}
+                      title="Instagram"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i class="fab fa-instagram" />
+                    </a>
+                  )}
+                  {persona.linkedin && (
+                    <a
+                      class="btn btn-square btn-primary text-white rounded-circle mx-1"
+                      href={persona.linkedin}
+                      title="LinkedIn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i class="fab fa-linkedin-in" />
+                    </a>
+                  )}
                 </div>
+              </div>
             </div>
-            </div>
+          </div>
         ))
-        }
+      }
     </div>
-    </div>
+  </div>
 </div>

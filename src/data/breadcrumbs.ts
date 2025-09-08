@@ -16,6 +16,14 @@ export const routes: Record<string, RouteInfo> = {
       { name: "blog" },
     ],
   },
+  "/blog/[slug]": {
+    title: "Detalle del Post",
+    items: [
+      { name: "Inicio", url: "/" },
+      { name: "Blog", url: "/blog" },
+      { name: "Post" }, // Este lo vamos a sobreescribir con el título real
+    ],
+  },
     "/contact": {
     title: "Contáctanos",
     items: [

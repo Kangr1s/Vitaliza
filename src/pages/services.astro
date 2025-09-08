@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Service from '../components/Services.astro';
 import { servicios } from '../data/services.js';
 import Testimonies from '../components/Testimonies.astro';
+import FAQ from '../components/FAQ.astro';
 ---
 
 <Layout
@@ -10,6 +11,10 @@ import Testimonies from '../components/Testimonies.astro';
   description="En Vitaliza, nos dedicamos a ofrecer soluciones integrales para tu bienestar y recuperación. Nuestro equipo de expertos está comprometido en brindarte el apoyo necesario para alcanzar tus objetivos de salud.">
   <main>
       <Service services={servicios} />
+      <div class="text-center my-4">
+		<button class="btn btn-primary btn-lg text-white" onclick="window.location='/appointment'">Reserva ahora mismo</button>
+		</div>
+      <FAQ />
       <Testimonies />
   </main>
 </Layout>

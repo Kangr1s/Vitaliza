@@ -4,14 +4,14 @@ import AboutComponent from '../components/About.astro';
 import TeamList from '../components/TeamList.astro';
 import Features from '../components/Features.astro';
 import { equipo } from '../data/team.js';
+import MisionVisionHistory from '../components/MisionVisionHistory.astro';
 
 ---
 
-<Layout
-  title="Vitaliza - Comprometidos con tu recuperación"
-  description="En Vitaliza, nos dedicamos a ofrecer soluciones integrales para tu bienestar y recuperación. Nuestro equipo de expertos está comprometido en brindarte el apoyo necesario para alcanzar tus objetivos de salud.">
+<Layout title="Sobre Nosotros" description="Conoce nuestra historia, misión y visión.">
   <main>
     <AboutComponent />
+    <MisionVisionHistory
     <TeamList equipo={equipo} />
     <Features />
   </main>

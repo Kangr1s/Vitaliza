@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import AboutComponent from '../components/About.astro';
-import TeamList from '../components/TeamList.astro';
+import Teamlist from '../components/TeamList.astro';
 import Features from '../components/Features.astro';
 import { equipo } from '../data/team.js';
 import MisionVisionHistory from '../components/MisionVisionHistory.astro';
@@ -11,8 +11,8 @@ import MisionVisionHistory from '../components/MisionVisionHistory.astro';
 <Layout title="Sobre Nosotros" description="Conoce nuestra historia, misión y visión.">
   <main>
     <AboutComponent />
-    <MisionVisionHistory
-    <TeamList equipo={equipo} />
+    <MisionVisionHistory />
+    <Teamlist equipo={equipo} />
     <Features />
   </main>
 </Layout>
